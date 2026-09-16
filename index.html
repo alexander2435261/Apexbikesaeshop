@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>APEX Bikes AE — E-Moto Parts & Builds</title>
+
+  <meta name="description"
+        content="APEX Bikes AE — E-moto parts, lighting and builds. UAE delivery. Yas Island, Abu Dhabi.">
+
+  <style>
+    :root {
+      --black: #050505;
+      --white: #ffffff;
+      --gray-1: #111111;
+      --gray-2: #1b1b1b;
+      --gray-3: #8b8b8b;
+      --line: #242424;
+      --accent: #3b82f6;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5, 5, 5, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 950;
+      font-style: italic;
+      letter-spacing: 4px;
+      background: linear-gradient(135deg, #fff 0%, #888 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .nav-links a {
+      color: #a0a0a0;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-button {
+      border: 1px solid #333;
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-size: 12px;
+      font-weight: 800;
+      background: #111;
+      color: white;
+      transition: all 0.2s;
+    }
+
+    .nav-button:hover {
+      background: white;
+      color: black;
+      border-color: white;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(0,0,0,0) 70%);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      width: 100%;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #222;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 8px 16px;
+      border-radius: 999px;
+      color: #aaa;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-size: clamp(50px, 10vw, 120px);
+      line-height: 0.88;
+      letter-spacing: -4px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .hero h1 span {
+      display: block;
+    }
+
+    .hero-text {
+      max-width: 580px;
+      margin: 30px auto;
+      color: #888;
+      font-size: 17px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 160px;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      transition: all 0.2s;
+    }
+
+    .btn-white {
+      background: white;
+      color: black;
+    }
+
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-dark {
+      background: #111;
+      border: 1px solid #333;
+      color: white;
+    }
+
+    .btn-dark:hover {
+      background: #1a1a1a;
+      border-color: #555;
+      transform: translateY(-2px);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 90px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(32px, 5vw, 50px);
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .section-head p {
+      max-width: 400px;
+      color: var(--gray-3);
+      font-size: 14px;
+    }
+
+    /* PRODUCTS GRID */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .product {
+      background: #0a0a0a;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product:hover {
+      transform: translateY(-6px);
+      border-color: #444;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    }
+
+    .product-image {
+      height: 280px;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-image img, 
+    .product-image video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .product:hover .product-image img {
+      transform: scale(1.04);
+    }
+
+    .product-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-body h3 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .product-body p {
+      color: #777;
+      font-size: 14px;
+      line-height: 1.4;
+      flex-grow: 1;
+      margin-bottom: 20px;
+    }
+
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-top: 1px solid #181818;
+      padding-top: 16px;
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+
+    .buy {
+      background: white;
+      color: black;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: opacity 0.2s;
+    }
+
+    .buy:hover {
+      opacity: 0.9;
+    }
+
+    /* FEATURES */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .feature {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 32px;
+      background: #0a0a0a;
+    }
+
+    .feature-number {
+      color: #555;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+    }
+
+    .feature h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* CTA */
+    .cta {
+      border: 1px solid #222;
+      border-radius: 24px;
+      padding: 80px 30px;
+      text-align: center;
+      background: linear-gradient(180deg, #0e0e0e 0%, #050505 100%);
+    }
+
+    .cta h2 {
+      font-size: clamp(36px, 6vw, 64px);
+      letter-spacing: -2px;
+      line-height: 1;
+    }
+
+    .cta p {
+      color: #777;
+      max-width: 500px;
+      margin: 20px auto 30px;
+      font-size: 15px;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 40px 0;
+      color: #555;
+      font-size: 13px;
+    }
+
+    .footer-flex {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .products, .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .nav-links, .nav-button {
+        display: none;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .products, .features {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 12px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">APEX</a>
+        <div class="nav-links">
+          <a href="#shop">Shop</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a href="https://wa.me/971585961146" target="_blank" class="nav-button">WhatsApp →</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">🇦🇪 UAE • Yas Island • Abu Dhabi</div>
+        <h1>
+          <span>BUILD.</span>
+          <span>RIDE.</span>
+          <span>APEX.</span>
+        </h1>
+        <p class="hero-text">
+          Premium E-Moto parts, lighting kits and custom builds across the UAE. Quality engineering for serious riders.
+        </p>
+        <div class="buttons">
+          <a href="#shop" class="btn btn-white">Shop Parts</a>
+          <a href="https://wa.me/971585961146" target="_blank" class="btn btn-dark">Contact APEX</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="shop">
+    <div class="container">
+      <div class="section-head">
+        <h2>Featured Products</h2>
+        <p>Explore our lineup of lighting kits, upgraded parts, and custom build services.</p>
+      </div>
+
+      <div class="products">
+
+        <!-- 1. Custom Builds -->
+        <div class="product">
+          <div class="product-image">
+            <img src="IMG_0909.jpg" alt="Custom Build">
+          </div>
+          <div class="product-body">
+            <h3>Custom Build</h3>
+            <p>Full custom e-moto builds built to spec. Contact us with your idea.</p>
+            <div class="product-bottom">
+              <span class="price">Price on Request</span>
+              <a href="https://wa.me/971585961146?text=Hi%20APEX,%20I'm%20interested%20in%20a%20Custom%20Build" target="_blank" class="buy">Inquire</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Rock Light -->
+        <div class="product">
+          <div class="product-image">
+            <img src="IMG_0910.jpg" alt="Rock Light">
+          </div>
+          <div class="product-body">
+            <h3>Rock Light</h3>
+            <p>Compact high-output underbody rock light kit with mounting bracket.</p>
+            <div class="product-bottom">
+              <span class="price">150 AED</span>
+              <a href="https://wa.me/971585961146?text=Hi%20APEX,%20I'd%20like%20to%20order%20the%20Rock%20Light" target="_blank" class="buy">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Baja Light Kit -->
+        <div class="product">
+          <div class="product-image">
+            <img src="IMG_0911.jpg" alt="Baja Light Kit">
+          </div>
+          <div class="product-body">
+            <h3>Baja Light Kit</h3>
+            <p>High performance dual spotlight setup with handlebar switch.</p>
+            <div class="product-bottom">
+              <span class="price">150 AED</span>
+              <a href="https://wa.me/971585961146?text=Hi%20APEX,%20I'd%20like%20to%20order%20the%20Baja%20Light%20Kit" target="_blank" class="buy">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Baja Light -->
+        <div class="product">
+          <div class="product-image">
+            <img src="IMG_0790.jpg" alt="Baja Light">
+          </div>
+          <div class="product-body">
+            <h3>Baja Light</h3>
+            <p>Available in Amber and Clear optics. Ultra bright e-moto lighting.</p>
+            <div class="product-bottom">
+              <span class="price">150 AED</span>
+              <a href="https://wa.me/971585961146?text=Hi%20APEX,%20I'd%20like%20to%20order%20the%20Baja%20Light" target="_blank" class="buy">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Footlock -->
+        <div class="product">
+          <div class="product-image">
+            <img src="IMG_0788.jpg" alt="Footlock">
+          </div>
+          <div class="product-body">
+            <h3>Footlock</h3>
+            <p>Heavy duty CNC machined footlock bracket for superior control.</p>
+            <div class="product-bottom">
+              <span class="price">Price on Request</span>
+              <a href="https://wa.me/971585961146?text=Hi%20APEX,%20I'm%20interested%20in%20the%20Footlock" target="_blank" class="buy">Inquire</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Surron Throttle -->
+        <div class="product">
+          <div class="product-image">
+            <img src="IMG_0786.jpg" alt="Surron Throttle">
+          </div>
+          <div class="product-body">
+            <h3>Surron Throttle</h3>
+            <p>Precision throttle assembly with carbon-style finish.</p>
+            <div class="product-bottom">
+              <span class="price">Price on Request</span>
+              <a href="https://wa.me/971585961146?text=Hi%20APEX,%20I'm%20interested%20in%20the%20Surron%20Throttle" target="_blank" class="buy">Inquire</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Pegs -->
+        <div class="product">
+          <div class="product-image">
+            <img src="IMG_0784.jpg" alt="Pegs">
+          </div>
+          <div class="product-body">
+            <h3>Pegs</h3>
+            <p>High-grip foot pegs available in Black and Silver finishes.</p>
+            <div class="product-bottom">
+              <span class="price">Price on Request</span>
+              <a href="https://wa.me/971585961146?text=Hi%20APEX,%20I'm%20interested%20in%20the%20Pegs" target="_blank" class="buy">Inquire</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Motor Cover (user wrote pegs twice – kept original product) -->
+        <div class="product">
+          <div class="product-image">
+            <img src="IMG_0781.jpg" alt="Motor Cover">
+          </div>
+          <div class="product-body">
+            <h3>Motor Cover</h3>
+            <p>Lightweight aluminum protective motor guard for e-motos.</p>
+            <div class="product-bottom">
+              <span class="price">Price on Request</span>
+              <a href="https://wa.me/971585961146?text=Hi%20APEX,%20I'm%20interested%20in%20the%20Motor%20Cover" target="_blank" class="buy">Inquire</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lighting Showcase (kept) -->
+        <div class="product">
+          <div class="product-image">
+            <video controls loop muted playsinline>
+              <source src="0f61731be9b84db5b1b0e63e359d1768.mp4" type="video/mp4">
+              Dein Browser unterstützt dieses Video nicht.
+            </video>
+          </div>
+          <div class="product-body">
+            <h3>Lighting Showcase</h3>
+            <p>Watch our Baja and Rock lights active in real-time testing.</p>
+            <div class="product-bottom">
+              <span class="price">Live Demo</span>
+              <a href="https://wa.me/971585961146?text=Hi%20APEX,%20I%20saw%20your%20lighting%20video" target="_blank" class="buy">Inquire</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <h2>APEX Standard</h2>
+        <p>Yas Island based specialist shop focusing on premium e-moto performance and style.</p>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <div class="feature-number">01 / LOCATION</div>
+          <h3>Yas Island, Abu Dhabi</h3>
+          <p>Based in the heart of UAE motorsport culture.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-number">02 / DELIVERY</div>
+          <h3>UAE Fast Delivery</h3>
+          <p>Direct door-to-door delivery available across all Emirates.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-number">03 / FOCUS</div>
+          <h3>Built To Order</h3>
+          <p>Carefully selected lights, throttles, and CNC hardware.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta">
+        <h2>READY TO BUILD?</h2>
+        <p>Send us your part requirements and your location in the UAE. We'll verify stock and arrange delivery.</p>
+        <a href="https://wa.me/971585961146" target="_blank" class="btn btn-white">Order via WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-flex">
+        <div>
+          <p style="color: white; font-weight: 800; font-size: 16px; margin-bottom: 8px;">APEX Bikes AE</p>
+          <p>Direct contact for prices, stock & custom builds:</p>
+          <div style="margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="https://wa.me/971585961146" target="_blank" class="btn btn-dark" style="min-width: auto; padding: 10px 20px;">WhatsApp</a>
+            <a href="https://www.tiktok.com/@apexbikesae?_r=1&_t=ZS-99kt9pxLxFU" target="_blank" class="btn btn-dark" style="min-width: auto; padding: 10px 20px;">TikTok DM</a>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <p>© 2026 APEX Bikes AE</p>
+          <p>Yas Island • Abu Dhabi • UAE</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
